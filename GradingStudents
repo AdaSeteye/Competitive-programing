@@ -1,0 +1,21 @@
+class Result {
+    public static List<Integer> gradingStudents(List<Integer> grades) {
+    ArrayList<Integer> grades1=new ArrayList();
+    if(grades.size()>=1 && grades.size()<=60){
+        for(int i=0;i<grades.size()&&i>=0&&i<=100;i++){
+            if((grades.get(i))>=38){
+                if(((grades.get(i)+5)%5)>=3){
+                    int m=(grades.get(i)+5);
+                    int t=m%5;
+                    grades1.add(m-t);
+                }
+                else
+                    grades1.add(grades.get(i));
+        }
+        else
+            grades1.add(grades.get(i));
+            }
+            }
+    return grades1;
+    }
+}
