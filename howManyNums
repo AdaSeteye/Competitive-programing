@@ -1,0 +1,17 @@
+class Solution {
+public:
+    vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
+        vector<int> tempVec;
+        int count;
+    for(int& i : nums){
+        count=0;
+        for(int& j : nums){
+            if(j<i){
+                count++;
+            }
+        }
+        tempVec.push_back(count);
+    }
+    return tempVec;
+    }
+};
