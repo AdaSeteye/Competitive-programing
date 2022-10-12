@@ -1,0 +1,25 @@
+class Solution {
+public:
+vector<int> srt(vector<int> a, int n) {
+   for (int i = 0; i < n - 1; i++) {
+      int min = i;
+      for (int j = i + 1; j < n; j++)
+      if (a.at(j) < a.at(min))
+      min = j;
+      int temp = a.at(i);
+      a[i] = a.at(min);
+      a.at(min) = temp;
+   }
+   return a;
+}
+    vector<int> targetIndices(vector<int> nums, int target) {
+       vector<int> vec=srt(nums,nums.size());
+       vector<int> vectorTemp;
+       for(int i=0;i<nums.size();i++){
+           if(vec.at(i)==target)
+            vectorTemp.push_back(i);
+       } 
+       return vectorTemp;
+    }    
+    
+};
