@@ -1,0 +1,13 @@
+class Solution:
+    def sortSentence(self, s: str) -> str:
+        lst=s.split()
+        lst2=[]
+        new_str=''
+        for i in range(1, len(lst)+1):
+            for k in lst:
+                if k[-1]==str(i):
+                    lst2.insert(i-1, k)
+        for j in range(len(lst2)):
+            lst2_new=lst2[j].replace(lst2[j][-1],'') 
+            new_str+=lst2_new+' '
+        return new_str[:-1]
