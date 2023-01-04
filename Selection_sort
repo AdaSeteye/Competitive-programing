@@ -1,0 +1,19 @@
+class Solution: 
+    def select(self, arr, i):
+        size=len(arr)
+        m=arr[i]
+        for j in range(i+1,size):
+            if arr[j]<m:
+                m=arr[j]
+                arr[j]=m
+        return m
+    
+    def selectionSort(self, arr,n):
+        for i in range(n):
+            m=arr[i]
+            for j in range(i+1,n):
+                if arr[j]<m:
+                    m,arr[j]=arr[j],m
+            arr[i]=m
+        return arr
+    
